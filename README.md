@@ -23,7 +23,7 @@ Prerequisites
 
 Installation
 Clone this repository:
-git clone https://github.com/MananJK/twitter-content-analysis.git
+git clone https://github.com/MananJK/Twitter-X-Hate-Speech-Detector.git
 cd twitter-content-analysis
 
 Create a virtual environment and activate it:
