@@ -1,90 +1,138 @@
-Twitter Content Analysis Web Application
-This project is a web application that analyzes Twitter content (tweets and images) to identify potential hate speech or offensive content. It provides an intuitive web interface for users to enter a Twitter username and receive an analysis report.
+# Twitter Content Analysis Web Application
 
-Features
--> Twitter Content Retrieval: Fetches tweets from specified Twitter accounts using the Twitter API
--> Text Analysis: Analyzes tweet text for potential hate speech using a keyword-based classifier
--> Image Analysis: Performs basic classification of images attached to tweets
--> Summary Statistics: Generates summary metrics for the analyzed content
--> Web Interface: Provides a clean, user-friendly interface for accessing the analysis
+A Flask-based web tool for analyzing Twitter content to identify potentially offensive language and images. This application provides an intuitive interface to fetch and analyze a user's recent tweets, generating a summary report with content statistics.
 
-Technology Stack
--> Backend: Python with Flask web framework
--> Data Processing: NumPy, Pandas
--> Image Processing: PIL (Python Imaging Library)
--> API Integration: Tweepy (Twitter API client)
--> Visualization: Matplotlib
--> Frontend: HTML, CSS, JavaScript (through Flask templates)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
+![Flask](https://img.shields.io/badge/Flask-2.0-lightgrey.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-Getting Started
-Prerequisites
--> Python 3.8 or higher
--> Twitter Developer Account with API access
+---
 
-Installation
-Clone this repository:
-git clone https://github.com/MananJK/Twitter-X-Hate-Speech-Detector.git
-cd twitter-content-analysis
+### 🖥️ Application Interface
 
-Create a virtual environment and activate it:
-python -m venv venv
-# On Windows
-venv\Scripts\activate
-# On macOS/Linux
-source venv/bin/activate
 
-Install the required dependencies:
-pip install -r requirements.txt
+[Image of the web application's user interface]
 
-Replace the Twitter API credentials in app.py with your own:
-consumer_key = "your-consumer-key"
-consumer_secret = "your-consumer-secret"
-access_token = "your-access-token"
-access_token_secret = "your-access-token-secret"
-bearer_token = "your-bearer-token"
+*(It's highly recommended to add a screenshot of your application's UI here. It makes the project much more engaging.)*
 
-Running the Application
-1. Start the Flask development server:
-   python appgit.py
+---
 
-2. Open your web browser and navigate to:
-   http://127.0.0.1:5000/
+## Table of Contents
 
-3. Enter a Twitter username (with or without the @ symbol) and click "Analyze" to see the results.
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [How It Works](#how-it-works)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation & Configuration](#installation--configuration)
+- [Running the Application](#running-the-application)
+- [Project Structure](#project-structure)
+- [Future Roadmap](#future-roadmap)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
-How It Works
-Text Classification
-The application uses a keyword-based approach to classify text:
+---
 
-1. It preprocesses text by removing URLs, mentions, hashtags, and special characters
-2. It counts occurrences of predefined positive and negative words
-3. It calculates sentiment scores based on word counts
-4. It maps sentiment scores to content categories (normal, offensive, hate speech)
+## ✨ Key Features
 
-Image Classification
-The current implementation uses a simple placeholder classifier that:
+- **Dynamic Content Fetching**: Retrieves recent tweets and associated media from any public Twitter profile using the Twitter API.
+- **Sentiment & Hate Speech Analysis**: Implements a baseline keyword-based classifier to score tweet text for negative, offensive, or hate speech content.
+- **Extensible Image Moderation**: Includes a foundational module for analyzing images, designed for future integration with advanced computer vision models.
+- **Insightful Dashboard**: Generates and displays summary statistics and visualizations for a clear, at-a-glance overview of the analysis results.
+- **User-Friendly Web Interface**: A clean and simple single-page application built with Flask and HTML/CSS for easy interaction.
 
-1. Verifies image accessibility by downloading it
-2. Returns a default "normal" classification
-3. Could be extended to use more sophisticated image classification in the future
+---
 
-Project Structure:
-twitter-content-analysis/
-├── app.py              # Main application file with Flask routes and logic
-├── templates/          # HTML templates for the web interface
-│   └── index.html      # Main page template
-├── static/             # Static assets (CSS, JS, images)
-├── requirements.txt    # Python dependencies
-└── README.md           # Project documentation
+## 🛠️ Technology Stack
 
-Future Improvements
--> Implement more sophisticated text classification using machine learning models
--> Add actual image classification capability for better accuracy
--> Expand analysis to include other social media platforms
--> Add user authentication for saved reports
--> Implement caching to improve performance for repeated analyses
+| Category          | Technologies                                                              |
+| ----------------- | ------------------------------------------------------------------------- |
+| **Backend**         | Python, Flask                                                             |
+| **API Integration** | Tweepy                                                                    |
+| **Data Science**     | NumPy, Pandas, Matplotlib                                                 |
+| **Image Processing**| Pillow (PIL)                                                              |
+| **Frontend**        | HTML, CSS, JavaScript (via Flask Jinja2 templates)                        |
 
-Acknowledgments
-Twitter for providing the API access
-Flask and Python communities for excellent documentation
-All the open-source libraries that made this project possible
+---
+
+## ⚙️ How It Works
+
+The application follows a two-pronged approach for content analysis: one for text and one for images.
+
+### Text Classification
+The text analysis pipeline uses a straightforward and efficient keyword-based classification model as a baseline.
+1.  **Preprocessing**: The raw text of each tweet is cleaned by removing URLs, mentions, hashtags, and special characters to isolate the core content.
+2.  **Scoring**: The system counts the occurrences of words from predefined "positive" and "negative/offensive" word lists.
+3.  **Categorization**: Based on the resulting sentiment score, each tweet is classified into one of three categories: **Normal**, **Offensive**, or **Hate Speech**.
+
+### Image Classification
+The current implementation features a placeholder for image analysis, which serves as a foundation for future development.
+1.  **Image Retrieval**: The application first verifies that an image attached to a tweet is accessible by downloading it.
+2.  **Default Classification**: It currently returns a "Normal" classification for all valid images.
+3.  **Future Extensibility**: This module is designed to be easily replaced with a more sophisticated deep learning model (e.g., a CNN) for actual image content analysis.
+
+---
+
+## 🚀 Getting Started
+
+Follow these instructions to set up and run the project locally.
+
+### Prerequisites
+- Python 3.8 or higher
+- A [Twitter Developer Account](https://developer.twitter.com/en/apply-for-access) with API keys and tokens for a v2 project.
+
+### Installation & Configuration
+
+1.  **Clone this repository:**
+    ```bash
+    git clone [https://github.com/MananJK/Twitter-X-Hate-Speech-Detector.git](https://github.com/MananJK/Twitter-X-Hate-Speech-Detector.git)
+    cd Twitter-X-Hate-Speech-Detector
+    ```
+
+2.  **Create and activate a virtual environment:**
+    ```bash
+    # Create the environment
+    python -m venv venv
+    
+    # Activate on Windows
+    .\venv\Scripts\activate
+    
+    # Activate on macOS/Linux
+    source venv/bin/activate
+    ```
+
+3.  **Install the required dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Configure API Credentials:**
+    Open the `app.py` file and replace the placeholder values with your own Twitter API credentials.
+
+    ```python
+    consumer_key = "your-consumer-key"
+    consumer_secret = "your-consumer-secret"
+    access_token = "your-access-token"
+    access_token_secret = "your-access-token-secret"
+    bearer_token = "your-bearer-token"
+    ```
+    > **Note:** It is best practice to use environment variables to store sensitive credentials rather than hardcoding them directly in the source code.
+
+---
+
+## ▶️ Running the Application
+
+1.  **Start the Flask development server:**
+    ```bash
+    python app.py
+    ```
+
+2.  **Access the web interface:**
+    Open your web browser and navigate to `http://127.0.0.1:5000/`.
+
+3.  **Analyze a Profile:**
+    Enter a Twitter username (e.g., `twitter` or `@twitter`) and click "Analyze" to view the report.
+
+---
+
+## 📁 Project Structure
