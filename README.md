@@ -139,10 +139,10 @@ Follow these instructions to set up and run the project locally.
 twitter-content-analysis/
 ├── appgit.py          # Main Flask application with all routes and logic
 ├── templates/
-│   └── index.html     # Jinja2 template for the main web interface
+     └── index.html     # Jinja2 template for the main web interface
 ├── static/            # Static assets
-│   ├── css            # CSS template designs
-│   └── js             # JS template designs
+     ├── css            # CSS template designs
+     └── js             # JS template designs
 ├── requirements.txt   # List of Python dependencies for pip
 └── README.md          # Project documentation
 ```
