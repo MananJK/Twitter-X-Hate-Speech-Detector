@@ -11,9 +11,7 @@ A Flask-based web tool for analyzing Twitter content to identify potentially off
 ### 🖥️ Application Interface
 
 
-[Image of the web application's user interface]
-
-*(It's highly recommended to add a screenshot of your application's UI here. It makes the project much more engaging.)*
+![Project Demo](assets/UI.png)
 
 ---
 
