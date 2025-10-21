@@ -83,7 +83,7 @@ Follow these instructions to set up and run the project locally.
 
 1.  **Clone this repository:**
     ```bash
-    git clone [https://github.com/MananJK/Twitter-X-Hate-Speech-Detector.git](https://github.com/MananJK/Twitter-X-Hate-Speech-Detector.git)
+    git clone https://github.com/MananJK/Twitter-X-Hate-Speech-Detector.git
     cd Twitter-X-Hate-Speech-Detector
     ```
 
@@ -105,7 +105,7 @@ Follow these instructions to set up and run the project locally.
     ```
 
 4.  **Configure API Credentials:**
-    Open the `app.py` file and replace the placeholder values with your own Twitter API credentials.
+    Open the `appgit.py` file and replace the placeholder values with your own Twitter API credentials.
 
     ```python
     consumer_key = "your-consumer-key"
@@ -122,7 +122,7 @@ Follow these instructions to set up and run the project locally.
 
 1.  **Start the Flask development server:**
     ```bash
-    python app.py
+    python appgit.py
     ```
 
 2.  **Access the web interface:**
@@ -134,3 +134,37 @@ Follow these instructions to set up and run the project locally.
 ---
 
 ## 📁 Project Structure
+
+twitter-content-analysis/ 
+          ├── appgit.py # Main Flask application with all routes and logic 
+          ├── templates/ 
+                └── index.html # Jinja2 template for the main web interface 
+          ├── static/ # Static assets
+                ├── css # CSS template designs
+                └── js # JS template designs
+          ├── requirements.txt # List of Python dependencies for pip 
+          └── README.md # Project documentation
+
+
+---
+
+## 🗺️ Future Roadmap
+
+- **Advanced ML Models**: Integrate NLP models (e.g., using `scikit-learn` or `Hugging Face Transformers`) for more nuanced text classification.
+- **True Image Recognition**: Implement a pre-trained computer vision model (like ResNet or VGG) to classify images for sensitive content.
+- **User Authentication**: Add a user login system to allow users to save and view past analysis reports.
+- **Caching**: Implement a caching system (like Redis) to improve performance and avoid re-analyzing recently requested profiles.
+- **Containerization**: Add a `Dockerfile` to allow for easy deployment using Docker.
+
+---
+
+## 📜 License
+
+This project is distributed under the MIT License. See the `LICENSE` file for more information.
+
+---
+
+## 🙏 Acknowledgments
+
+- The open-source communities behind Python and Flask.
+- The developers of the Tweepy library for simplifying interaction with the Twitter API.
